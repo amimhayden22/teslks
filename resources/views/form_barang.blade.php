@@ -13,7 +13,7 @@
                 @csrf
                 <tr>
                     <td>Nama Barang</td>
-                    <td><input type="text" name="nm_barang"  required></td>
+                    <td><input type="text" name="nm_brg"  required></td>
                 </tr>
                 <tr>
                     <td>Jumlah Barang</td>

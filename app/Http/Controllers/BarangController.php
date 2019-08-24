@@ -24,7 +24,7 @@ class BarangController extends Controller
             $brg->jml_in= $jml + $request->get('jml_in'); 
             $brg->save();
             
-            return redirect()->back();
+            return redirect('formbarang')->back();
         } else {
             $input = new Barang();
             $input->nm_brg = $request->get('nm_brg');
@@ -32,6 +32,7 @@ class BarangController extends Controller
             $input->satuan = $request->get('satuan');
             $input->harga_brg = $request->get('harga_brg');
             $input->ket = $request->get('ket');
+            $input->save();
 
             return redirect('readbarang');
         }
