@@ -20,4 +20,5 @@ Route::get('formbarang', function () {
     return view('form_barang');
 });
 Route::post('createbarang', 'BarangController@InputBarang');
+Route::post('updatebarang', 'BarangController@UpdateBarang');
 Route::get('readbarang', 'BarangController@TampilBarang');

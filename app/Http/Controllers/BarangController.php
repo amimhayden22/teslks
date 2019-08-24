@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Barang;
 use App\Transaksi;
+use Redirect;
 
 class BarangController extends Controller
 {
@@ -24,7 +25,7 @@ class BarangController extends Controller
             $brg->jml_in= $jml + $request->get('jml_in'); 
             $brg->save();
             
-            return redirect('formbarang')->back();
+            return redirect()->back()->with('alert','jumlah');
         } else {
             $input = new Barang();
             $input->nm_brg = $request->get('nm_brg');
@@ -34,9 +35,19 @@ class BarangController extends Controller
             $input->ket = $request->get('ket');
             $input->save();
 
-            return redirect('readbarang');
+            return redirect()->back()->with('alert','tambah');
         }
-        
     }
+    public function UpdateBarang(Request $request)
+    {
+        $brg = Barang::whereid($request->get('id'))->first();
+        $brg->nm_brg = $request->get('nm_brg');
+        $brg->jml_in = $request->get('jml_in');
+        $brg->satuan = $request->get('satuan');
+        $brg->harga_brg = $request->get('harga_brg');
+        $brg->ket = $request->get('ket');
+        $brg->save();
 
+        return redirect()->back()->with('alert','update');
+    }
 }

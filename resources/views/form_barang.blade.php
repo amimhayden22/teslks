@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,4 +37,8 @@
             </form>
         </table>
     </body>
-    </html>
+    </html-->
+
+    <script>
+     document.location.href = "{{url('readbarang')}}";
+    </script>

@@ -14,7 +14,7 @@ class CreateTOutputTable extends Migration
     public function up()
     {
         Schema::create('t_output', function (Blueprint $table) {
-            $table->bigIncrements('id_out');
+            $table->bigIncrements('id');
             $table->string('nm_brg');
             $table->integer('jml_out');
             $table->string('satuan');
