@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/* CRUD Barang */
 Route::get('formbarang', function () {
     return view('form_barang');
 });
