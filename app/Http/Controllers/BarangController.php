@@ -10,7 +10,9 @@ class BarangController extends Controller
 {
     public function TampilBarang()
     {
-        return view('table_barang');
+        $barang = Barang::select('*')->get();
+
+        return view('table_barang', compact('barang'));
     }
 
     public function InputBarang(Request $request)
@@ -31,13 +33,8 @@ class BarangController extends Controller
             $input->harga_brg = $request->get('harga_brg');
             $input->ket = $request->get('ket');
 
-            return redirect()->back();
+            return redirect('readbarang');
         }
-        
-    }
-
-    public function EditBarang(Request $request)
-    {
         
     }
 

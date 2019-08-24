@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('formbarang', function () {
+    return view('form_barang');
+});
+Route::post('createbarang', 'BarangController@InputBarang');
+Route::get('readbarang', 'BarangController@TampilBarang');
