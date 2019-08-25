@@ -57,4 +57,11 @@ class BarangController extends Controller
         
         return redirect()->back()->with('alert','hapus');
     }
+
+    public function TampilTransaksi()
+    {
+        $barang = Transaksi::select('*')->get();
+
+        return view('table_transaksi', compact('transaksi'));
+    }
 }

@@ -15,11 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* CRUD Barang */
-Route::get('formbarang', function () {
-    return view('form_barang');
+/* Halaman Awal */
+Route::get('home', function () {
+    return view('home');
 });
+
+/* CRUD Barang */
+// Route::get('formbarang', function () {
+//     return view('form_barang');
+// });
 Route::post('createbarang', 'BarangController@InputBarang');
 Route::post('updatebarang', 'BarangController@UpdateBarang');
 Route::get('readbarang', 'BarangController@TampilBarang');
 Route::get('deletebarang/{id}', 'BarangController@HapusBarang');
+
+/* CRUD Transaksi */
+Route::get('readtransaksi', 'BarangController@TampilTransaksi');
