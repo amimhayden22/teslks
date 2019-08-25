@@ -22,3 +22,4 @@ Route::get('formbarang', function () {
 Route::post('createbarang', 'BarangController@InputBarang');
 Route::post('updatebarang', 'BarangController@UpdateBarang');
 Route::get('readbarang', 'BarangController@TampilBarang');
+Route::get('deletebarang/{id}', 'BarangController@HapusBarang');

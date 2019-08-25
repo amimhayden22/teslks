@@ -32,7 +32,7 @@
             <td>{{$b->ket}}</td>
             <td>
                 <button class="btn btn-sm btn-warning editBarang" data-id="{{$b->id}}" data-nama="{{$b->nm_brg}}" data-jumlah="{{$b->jml_in}}" data-satuan="{{$b->satuan}}" data-harga="{{$b->harga_brg}}" data-ket="{{$b->ket}}">Edit</button>
-                <button class="btn btn-sm btn-danger hapusBarang">Hapus</button>
+                <button class="btn btn-sm btn-danger hapusBarang" data-id="{{$b->id}}">Hapus</button>
             </td>
         </tr>
         @endforeach
@@ -180,6 +180,15 @@
         <strong>Success!</strong> Barang berhasil diedit.
     </div>
 @endif
+@if (session('alert') == "hapus")
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <strong>Success!</strong> Barang berhasil dihapus.
+    </div>
+@endif
 @endsection
 
 @prepend('script')
@@ -197,5 +206,10 @@
         $('#harga_brg').val($(this).data('harga'));
         $('#ket').val($(this).data('ket'));
         $('#modal-edit-barang').modal('show');
+    });
+
+    //untuk hapus barang ketika tombol hapus di click 
+    $('.hapusBarang').click(function(){
+        document.location.href = "{{url('deletebarang')}}/{{$b->id}}";
     });
 @endprepend
