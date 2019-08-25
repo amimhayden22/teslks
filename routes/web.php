@@ -31,3 +31,4 @@ Route::get('deletebarang/{id}', 'BarangController@HapusBarang');
 
 /* CRUD Transaksi */
 Route::get('readtransaksi', 'BarangController@TampilTransaksi');
+Route::post('createtransaksi', 'BarangController@InputTransaksi');
