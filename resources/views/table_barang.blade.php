@@ -145,6 +145,7 @@
             </div>
             <div class="modal-footer">
                 <form action="{{url('deletebarang')}}" method="post">
+                    @csrf
                     <input type="hidden" name="id" id="hapus_id">
                         <button type="submit" class="btn btn-danger">Hapus</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

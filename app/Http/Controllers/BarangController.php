@@ -52,9 +52,9 @@ class BarangController extends Controller
         return redirect()->back()->with('alert','update');
     }
 
-    public function HapusBarang($id)
+    public function HapusBarang(Request $request)
     {
-        $hapus = Barang::whereid($id)->delete();
+        $hapus = Barang::whereid($request->get('id'))->delete();
         
         return redirect()->back()->with('alert','hapus');
     }
