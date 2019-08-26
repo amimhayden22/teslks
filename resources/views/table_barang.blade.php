@@ -28,7 +28,7 @@
             <td>{{$b->nm_brg}}</td>
             <td>{{$b->jml_in}}</td>
             <td>{{$b->satuan}}</td>
-            <td>{{$b->harga_brg}}</td>
+            <td>Rp. {{$b->harga_brg}}</td>
             <td>{{$b->ket}}</td>
             <td>
                 <button class="btn btn-sm btn-warning editBarang" data-id="{{$b->id}}" data-nama="{{$b->nm_brg}}" data-jumlah="{{$b->jml_in}}" data-satuan="{{$b->satuan}}" data-harga="{{$b->harga_brg}}" data-ket="{{$b->ket}}">Edit</button>
@@ -214,7 +214,6 @@
 
     //untuk hapus barang ketika tombol hapus di click 
     $('.hapusBarang').click(function(){
-        {{-- document.location.href = "{{url('deletebarang')}}/{{$b->id}}"; --}}
         $('#hapus_id').val($(this).data('id'));
         var nama = ($(this).data('nama'));
         $('#hapusIsi').html('Apakah anda ingin menghapus <strong class="text-danger">'+ nama +'</strong> ?');

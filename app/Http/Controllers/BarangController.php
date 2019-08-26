@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Barang;
-use App\Transaksi;
 use Redirect;
 use Form;
 
@@ -59,33 +58,4 @@ class BarangController extends Controller
         return redirect()->back()->with('alert','hapus');
     }
 
-    public function TampilTransaksi()
-    {
-        $transaksi = Transaksi::select('*')->get();
-        $barang = Barang::all();
-
-        return view('table_transaksi', compact('barang', 'transaksi'));
-    }
-
-    // public function InputTransaksi(Request $request)
-    // {
-    //     $cek = Transaksi::wherejml_out($request->get('jml_out'))->count();
-    //     if ($cek > 0) {
-    //         $jml = Barang::wherejml_in($request->get('jml_in'))->first()->jml_in;
-    //         $out = Transaksi::wherenm_out($request->get('nm_out'))->first();
-    //         $out->jml_out= $jml - $request->get('jml_out'); 
-    //         $out->save();
-            
-    //         return redirect()->back()->with('alert','jumlah');
-    //     } else {
-    //         $input = new Transaksi();
-    //         $input->nm_brg = $request->get('nm_brg');
-    //         $input->jml_out = $request->get('jml_out');
-    //         $input->satuan = $request->get('satuan');
-    //         $input->ket = $request->get('ket');
-    //         $input->save();
-
-    //         return redirect()->back()->with('alert','tambah');
-    //     }
-    // }
 }
