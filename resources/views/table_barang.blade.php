@@ -32,7 +32,7 @@
             <td>{{$b->ket}}</td>
             <td>
                 <button class="btn btn-sm btn-warning editBarang" data-id="{{$b->id}}" data-nama="{{$b->nm_brg}}" data-jumlah="{{$b->jml_in}}" data-satuan="{{$b->satuan}}" data-harga="{{$b->harga_brg}}" data-ket="{{$b->ket}}">Edit</button>
-                <button class="btn btn-sm btn-danger hapusBarang" data-id="{{$b->id}}">Hapus</button>
+                <button class="btn btn-sm btn-danger hapusBarang" title="Hapus {{$b->nm_brg}} " data-id="{{$b->id}}" data-nama="{{$b->nm_brg}}">Hapus</button>
             </td>
         </tr>
         @endforeach
@@ -144,8 +144,11 @@
                 <h3 id="hapusIsi"></h3>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger">Hapus</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <form action="{{url('deletebarang')}}" method="post">
+                    <input type="hidden" name="id" id="idhapus">
+                        <button type="button" class="btn btn-danger">Hapus</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </form>
             </div>
         </div>
     </div>
@@ -210,6 +213,9 @@
 
     //untuk hapus barang ketika tombol hapus di click 
     $('.hapusBarang').click(function(){
-        document.location.href = "{{url('deletebarang')}}/{{$b->id}}";
+        $('#idhapus').val($(this).data('id'));
+        var nama = ($(this).data('nama'));
+        $('#hapusIsi').html('Apakah anda ingin menghapus <strong class="text-danger">'+ nama +'</strong> ?');
+        $('#modal-hapus-barang').modal('show');
     });
 @endprepend

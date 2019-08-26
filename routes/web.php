@@ -27,7 +27,7 @@ Route::get('home', function () {
 Route::post('createbarang', 'BarangController@InputBarang');
 Route::post('updatebarang', 'BarangController@UpdateBarang');
 Route::get('readbarang', 'BarangController@TampilBarang');
-Route::get('deletebarang/{id}', 'BarangController@HapusBarang');
+Route::post('deletebarang/{id}', 'BarangController@HapusBarang');
 
 /* CRUD Transaksi */
 Route::get('readtransaksi', 'BarangController@TampilTransaksi');
