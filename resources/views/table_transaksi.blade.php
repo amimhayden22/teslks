@@ -31,6 +31,7 @@ Tabel Transaksi
             <td>
                 <button class="btn btn-sm btn-warning editTransaksi" data-id="{{$t->id}}" data-nama="{{$t->nm_brg}}" data-jumlah="{{$t->jml_out}}" data-satuan="{{$t->satuan}}" data-ket="{{$t->ket}}">Edit</button>
                 <button class="btn btn-sm btn-danger hapusTransaksi" data-id="{{$t->id}}" data-nama="{{$t->nm_brg}}">Hapus</button>
+                <button class="btn btn-sm btn-info hapusTransaksi" data-id="{{$t->id}}">Cetak</button>
             </td>
         </tr>
         @endforeach

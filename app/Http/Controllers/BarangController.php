@@ -57,5 +57,6 @@ class BarangController extends Controller
         
         return redirect()->back()->with('alert','hapus');
     }
+    
 
 }

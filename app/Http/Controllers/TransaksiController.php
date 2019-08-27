@@ -60,4 +60,9 @@ class TransaksiController extends Controller
         
         return redirect()->back()->with('alert','hapus');
     }
+
+    public function CetakTransaksi()
+    {
+        
+    }
 }
