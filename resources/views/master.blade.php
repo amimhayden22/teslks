@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Data Barang</title>
+    <title>Inventaris Barang</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,6 +11,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
   </head>
   <body>
+    @auth
       <!-- Navigasi start -->
       <nav class="navbar navbar-expand-lg navbar-light bg-primary">
           <a class="navbar-brand" href="{{url('home')}}">INVENTARIS</a>
@@ -21,10 +22,12 @@
             <div class="navbar-nav">
               <a class="nav-item nav-link active" href="{{url('readbarang')}}">Barang</a>
               <a class="nav-item nav-link active" href="{{url('readtransaksi')}}">Transaksi</a>
+              <a class="nav-item nav-link active" href="{{url('logout')}}">Logout</a>
             </div>
           </div>
         </nav>
       <!-- Navigasi end -->
+    @endauth
 
       <!--Jumbotron start-->
       <div class="jumbotron text-center">
@@ -41,6 +44,7 @@
       <!--konten start-->
       <div class="container">
             @yield('konten')
+            @yield('gagal')
       </div>
       <!--Jumbotron end-->
 

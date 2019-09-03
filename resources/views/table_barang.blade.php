@@ -5,6 +5,7 @@
 @endsection
 
 @section('konten')
+@auth
 <button type="button" class="btn btn-success" id="tambahBarang">Tambah Barang</button>
 <!--a href="{{url('')}}"><button type="button" class="btn btn-primary">Transaksi Barang</button></a--><br>
 <br>
@@ -38,6 +39,7 @@
         @endforeach
     </tbody>
 </table>
+@endauth
 @endsection
 
 @section('modal')

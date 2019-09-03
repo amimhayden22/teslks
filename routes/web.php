@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('halamanlogin');
 });
 
 /* Halaman Awal */
@@ -21,9 +21,6 @@ Route::get('home', function () {
 });
 
 /* CRUD Barang */
-// Route::get('formbarang', function () {
-//     return view('form_barang');
-// });
 Route::post('createbarang', 'BarangController@InputBarang');
 Route::post('updatebarang', 'BarangController@UpdateBarang');
 Route::get('readbarang', 'BarangController@TampilBarang');
@@ -34,3 +31,11 @@ Route::get('readtransaksi', 'TransaksiController@TampilTransaksi');
 Route::post('createtransaksi', 'TransaksiController@InputTransaksi');
 Route::post('updatetransaksi', 'TransaksiController@UpdateTransaksi');
 Route::post('deletetransaksi', 'TransaksiController@Hapustransaksi');
+Route::get('cetaklaporan', 'TransaksiController@CetakTransaksi');
+
+/*Registrasi & Login */
+Route::get('registrasi', 'LoginController@Registrasi');
+Route::post('daftar', 'LoginController@Daftar');
+Route::get('masuk', 'LoginController@HalamanLogin');
+Route::post('login', 'LoginController@Login');
+Route::get('logout', 'LoginController@Logout');

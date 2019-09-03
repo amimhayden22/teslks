@@ -7,6 +7,7 @@ use App\Transaksi;
 use App\Barang;
 use Redirect;
 use Form;
+use PDF;
 
 class TransaksiController extends Controller
 {
@@ -63,6 +64,7 @@ class TransaksiController extends Controller
 
     public function CetakTransaksi()
     {
-        
+        $pdf = PDF::loadview('myPDF');
+        return $pdf->stream();
     }
 }

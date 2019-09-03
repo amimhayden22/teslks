@@ -5,6 +5,7 @@ Tabel Transaksi
 @endsection
 
 @section('konten')
+@auth
 <button type="button" class="btn btn-success" id="tambahTransaksi">Tambah Transaksi</button>
 <br>
 <br>
@@ -31,12 +32,13 @@ Tabel Transaksi
             <td>
                 <button class="btn btn-sm btn-warning editTransaksi" data-id="{{$t->id}}" data-nama="{{$t->nm_brg}}" data-jumlah="{{$t->jml_out}}" data-satuan="{{$t->satuan}}" data-ket="{{$t->ket}}">Edit</button>
                 <button class="btn btn-sm btn-danger hapusTransaksi" data-id="{{$t->id}}" data-nama="{{$t->nm_brg}}">Hapus</button>
-                <button class="btn btn-sm btn-info hapusTransaksi" data-id="{{$t->id}}">Cetak</button>
+                <button class="btn btn-sm btn-info cetakTransaksi" data-id="{{$t->id}}">Cetak</button>
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
+@endauth
 @endsection
 
 @section('modal')
@@ -213,4 +215,10 @@ $('.editTransaksi').click(function(){
         $('#hapusIsi').html('Apakah anda ingin menghapus <strong class="text-danger">'+ nama +'</strong> ?');
         $('#modal-hapus-transaksi').modal('show');
     });
+
+// untuk cetak barang ketika tombol cetak di clik 
+    $('.cetakTransaksi').click(function(){
+        document.location.href = "{{url('cetaklaporan')}}";
+    });
+
 @endprepend
