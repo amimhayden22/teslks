@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('jumbotron')
-Login
+LOGIN
 @endsection
 
 @section('konten')
@@ -18,7 +18,7 @@ Login
     </div>
     <button type="submit" class="btn btn-sm btn-success">Login</button>
     <br>
-    Belum mempunyai akun ? <a href="{{url('registrasi')}}">Daftar</a>
+    {{-- Belum mempunyai akun ? <a href="{{url('registrasi')}}">Daftar</a> --}}
 </form>    
 @endguest
 @endsection

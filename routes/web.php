@@ -34,7 +34,7 @@ Route::post('deletetransaksi', 'TransaksiController@Hapustransaksi');
 Route::get('cetaklaporan', 'TransaksiController@CetakTransaksi');
 
 /*Registrasi & Login */
-Route::get('registrasi', 'LoginController@Registrasi');
+// Route::get('registrasi', 'LoginController@Registrasi');
 Route::post('daftar', 'LoginController@Daftar');
 Route::get('masuk', 'LoginController@HalamanLogin');
 Route::post('login', 'LoginController@Login');
