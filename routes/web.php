@@ -30,16 +30,16 @@ Route::group(['middleware' => ['auth']], function () {
 
 /* CRUD Transaksi */
 Route::group(['middleware' => ['auth']], function () {
-Route::get('readtransaksi', 'TransaksiController@TampilTransaksi');
-Route::post('createtransaksi', 'TransaksiController@InputTransaksi');
-Route::post('updatetransaksi', 'TransaksiController@UpdateTransaksi');
-Route::post('deletetransaksi', 'TransaksiController@Hapustransaksi');
-Route::get('cetaklaporan', 'TransaksiController@CetakTransaksi');
+    Route::get('readtransaksi', 'TransaksiController@TampilTransaksi');
+    Route::post('createtransaksi', 'TransaksiController@InputTransaksi');
+    Route::post('updatetransaksi', 'TransaksiController@UpdateTransaksi');
+    Route::post('deletetransaksi', 'TransaksiController@Hapustransaksi');
+    Route::get('cetaklaporan', 'TransaksiController@CetakTransaksi');
 });
 
 /*Registrasi & Login */
 // Route::get('registrasi', 'LoginController@Registrasi');
-Route::post('daftar', 'LoginController@Daftar');
+// Route::post('daftar', 'LoginController@Daftar');
 Route::get('masuk', 'LoginController@HalamanLogin')->name('login');
 Route::post('login', 'LoginController@Login');
 Route::get('logout', 'LoginController@Logout');
