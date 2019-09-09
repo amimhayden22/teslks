@@ -22,6 +22,7 @@
             <div class="navbar-nav">
               <a class="nav-item nav-link active" href="{{url('readbarang')}}">Barang</a>
               <a class="nav-item nav-link active" href="{{url('readtransaksi')}}">Transaksi</a>
+              <a class="nav-item nav-link active" href="{{url('readstock')}}">Stock</a>
               <a class="nav-item nav-link active" href="{{url('logout')}}">Logout</a>
             </div>
           </div>

@@ -43,3 +43,11 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('masuk', 'LoginController@HalamanLogin')->name('login');
 Route::post('login', 'LoginController@Login');
 Route::get('logout', 'LoginController@Logout');
+
+/* Crud Stock */
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('readstock', 'StockController@TampilStock');
+    Route::post('createstock', 'StockController@InputStock');
+    Route::post('updatestock', 'StockController@UpdateStock');
+    Route::post('deletestock', 'StockController@HapusStock');
+});

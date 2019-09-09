@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Barang;
+use App\Stock;
 use Redirect;
 use Form;
 
@@ -12,8 +13,9 @@ class BarangController extends Controller
     public function TampilBarang()
     {
         $barang = Barang::select('*')->get();
+        $stock = Stock::all();
 
-        return view('table_barang', compact('barang'));
+        return view('table_barang', compact('barang', 'stock'));
     }
 
     public function InputBarang(Request $request)
